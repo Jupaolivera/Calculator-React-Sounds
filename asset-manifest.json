@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Calculator-React-Sounds/static/css/main.e97132ca.chunk.css",
+    "main.js": "/Calculator-React-Sounds/static/js/main.d6a00bd7.chunk.js",
+    "main.js.map": "/Calculator-React-Sounds/static/js/main.d6a00bd7.chunk.js.map",
+    "runtime-main.js": "/Calculator-React-Sounds/static/js/runtime-main.917ea92b.js",
+    "runtime-main.js.map": "/Calculator-React-Sounds/static/js/runtime-main.917ea92b.js.map",
+    "static/js/2.7753286c.chunk.js": "/Calculator-React-Sounds/static/js/2.7753286c.chunk.js",
+    "static/js/2.7753286c.chunk.js.map": "/Calculator-React-Sounds/static/js/2.7753286c.chunk.js.map",
+    "static/js/3.9f30bcf6.chunk.js": "/Calculator-React-Sounds/static/js/3.9f30bcf6.chunk.js",
+    "static/js/3.9f30bcf6.chunk.js.map": "/Calculator-React-Sounds/static/js/3.9f30bcf6.chunk.js.map",
+    "index.html": "/Calculator-React-Sounds/index.html",
+    "static/css/main.e97132ca.chunk.css.map": "/Calculator-React-Sounds/static/css/main.e97132ca.chunk.css.map",
+    "static/js/2.7753286c.chunk.js.LICENSE.txt": "/Calculator-React-Sounds/static/js/2.7753286c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.917ea92b.js",
+    "static/js/2.7753286c.chunk.js",
+    "static/css/main.e97132ca.chunk.css",
+    "static/js/main.d6a00bd7.chunk.js"
+  ]
+}
