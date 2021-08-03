@@ -53,15 +53,12 @@ const Calculator = () => {
     const [operation, setOperation] = useState("");
 
     const appendValue = (el) => {
+        console.log(current);
         const value = el.target.getAttribute("data");
-        if (current === Infinity || current === -Infinity) {
-            setCurrent(value);
-            numbers.triggerAttack(
-                samplesList[
-                    Math.floor(Math.random() * (samplesListMaxIndex + 1)) //random int formula  ---> Math.floor(Math.random()*(max-min+1)+min);
-                ]
-            );
-        } else if (value !== "." || (value === "." && !current.includes("."))) {
+        if (
+            value !== "." ||
+            (value === "." && !current.toString().includes("."))
+        ) {
             setCurrent(current + value);
             numbers.triggerAttack(
                 samplesList[
@@ -72,7 +69,12 @@ const Calculator = () => {
     };
 
     const handleDelete = () => {
-        setCurrent(current.toString().slice(0, -1));
+        if (current.toString()[0] === "-") {
+            setCurrent("");
+        } else {
+            setCurrent(current.toString().slice(0, -1));
+        }
+
         if (current !== "") {
             operations.triggerAttack("g0");
         }
@@ -188,20 +190,36 @@ const Calculator = () => {
         }
     };
 
-    useKeypress(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"], (event) => {
-        let samplesListMaxIndex = samplesList.length - 1;
-        numbers.triggerAttack(
-            samplesList[
-                Math.floor(Math.random() * (samplesListMaxIndex - 0 + 1) + 0)
-            ]
-        );
-        const value = event.key;
-        if (current === Infinity || current === -Infinity) {
-            setCurrent(value);
-        } else if (value !== "." || (value === "." && !current.includes("."))) {
-            setCurrent(current + value);
+    useKeypress(
+        ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."],
+        (event) => {
+            let samplesListMaxIndex = samplesList.length - 1;
+
+            const value = event.key;
+            if (current === Infinity || current === -Infinity) {
+                setCurrent(value);
+                numbers.triggerAttack(
+                    samplesList[
+                        Math.floor(
+                            Math.random() * (samplesListMaxIndex - 0 + 1) + 0
+                        )
+                    ]
+                );
+            } else if (
+                value !== "." ||
+                (value === "." && !current.toString().includes("."))
+            ) {
+                setCurrent(current + value);
+                numbers.triggerAttack(
+                    samplesList[
+                        Math.floor(
+                            Math.random() * (samplesListMaxIndex - 0 + 1) + 0
+                        )
+                    ]
+                );
+            }
         }
-    });
+    );
 
     useKeypress(["*", "/", "+", "-"], (event) => {
         let operationKey;
